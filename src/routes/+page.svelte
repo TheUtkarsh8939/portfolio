@@ -1,14 +1,27 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card";
+  import { onMount } from "svelte";
   import type { PageData } from "./$types";
   export let data: PageData;
   console.log(data.projectSnap);
   let current: number = 0;
-  let projectSnap = data.projectSnap
+  let projectSnap = data.projectSnap;
+
+  onMount(() => {
+    const main = document.getElementById("main");
+    
+
+    window.addEventListener("mousemove", (event) => {
+      blob.style.top = `${event.pageY}px`;
+      blob.style.left = `${event.pageX}px`;
+
+
+    });
+  });
 </script>
 
-<main>
-  <section class="ovr">
+<main class="relative z-20">
+  <section class="ovr z-30">
     <Card.Root
       class="bg-[rgba(0,0,0,0.69)] max-h-[500px]  absolute w-[clamp(100px,60%,500px)] mb-10 "
     >
@@ -57,41 +70,56 @@
     </Card.Root>
   </section>
 </main>
-<section class="projects bg-black flex flex-col items-center">
-  <div class="flex h-[80vh] w-screen">
-    <div class="mobile-container">
-      <div class="mobile-border z-10 mob1">
-        <div class="mobile1 mobile">
-          <div class="notch-border absolute"><div class="notch bg-black h-full w-full"></div></div>
-          <img src={projectSnap[current].img} alt={projectSnap[current].name + " Image 1"}>
+<div id="main">
+  <section class="projects -z-10 bg-black flex flex-col items-center">
+    <div
+      id="blob"
+      class="absolute z-10 left-0 blur-[200px] size-80 rounded-full from-cyan-400 bg-gradient-to-r to-emerald-600"
+    >
+      <div class="blob"></div>
+    </div>
+    <div class="flex h-[80vh] w-screen">
+      <div class="mobile-container">
+        <div class="mobile-border z-10 mob1">
+          <div class="mobile1 mobile">
+            <div class="notch-border absolute">
+              <div class="notch bg-black h-full w-full"></div>
+            </div>
+            <img
+              src={projectSnap[current].img}
+              alt={projectSnap[current].name + " Image 1"}
+            />
+          </div>
+        </div>
+        <div
+          class="mob2 mobile-border z-0 translate-x-[-20px] translate-y-[20px]"
+        >
+          <div class="mobile2 mobile">
+            <img
+              src={projectSnap[current].img2}
+              alt={projectSnap[current].name + " Image 2"}
+            />
+          </div>
         </div>
       </div>
-      <div class="mob2 mobile-border z-0 translate-x-[-20px] translate-y-[20px]">
-        <div class="mobile2 mobile">
-          <img src={projectSnap[current].img2} alt={projectSnap[current].name + " Image 2"}>
-
-        </div>
-        
+      <div class="abt">
+        <h3>{projectSnap[current].name}</h3>
+        <p>
+          {projectSnap[current].about}
+        </p>
       </div>
     </div>
-    <div class="abt">
-      <h3>{projectSnap[current].name}</h3>
-      <p>
-        {projectSnap[current].about}
-      </p>
+    <div class="dot-array flex gap-1">
+      {#each projectSnap as _, i}
+        {#if current == i}
+          <div class="dot bg-gray-200 size-1 rounded-full"></div>
+        {:else}
+          <div class="dot bg-gray-500 size-1 rounded-full"></div>
+        {/if}
+      {/each}
     </div>
-  </div>
-  <div class="dot-array flex gap-1">
-    {#each projectSnap as _, i}
-      {#if current == i}
-      <div class="dot bg-gray-200 size-1 rounded-full"></div>
-      {:else}
-      <div class="dot bg-gray-500 size-1 rounded-full"></div>
-      {/if}
-
-    {/each}
-  </div>
-</section>
+  </section>
+</div>
 
 <style lang="scss">
   @mixin gradient {
@@ -147,17 +175,19 @@
     align-items: center;
     justify-content: center;
     transition: 1s all ease-in-out;
-    @include gradient();
+    //@include gradient();
+    background-color: black;
+    box-shadow:
+      0px 0px 25px aqua,
+      0px 0px 16px lime;
   }
   .mobile-container {
-    &:hover{
-      .mob1{
-      transform: translate(25px, -25px);
-  
+    &:hover {
+      .mob1 {
+        transform: translate(25px, -25px);
       }
-      .mob2{
-      transform: translate(-45px, 45px);
-  
+      .mob2 {
+        transform: translate(-45px, 45px);
       }
     }
     height: 100vh;
@@ -165,7 +195,6 @@
     align-items: center;
     justify-content: center;
     width: 50%;
-
   }
   .projects {
     height: 100vh;
@@ -205,10 +234,10 @@
       font-family: sans-serif;
     }
   }
-  .mobile{
+  .mobile {
     overflow: hidden;
     aspect-ratio: 9/20;
-    img{
+    img {
       width: 100%;
     }
   }
