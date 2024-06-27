@@ -2,6 +2,8 @@
   import * as Card from "$lib/components/ui/card";
   import { onMount } from "svelte";
   import type { PageData } from "./$types";
+  import { doc } from "firebase/firestore";
+  import SkillsCard from "$lib/skillsCard.svelte";
   export let data: PageData;
   console.log(data.projectSnap);
   let current: number = 0;
@@ -9,11 +11,13 @@
 
   onMount(() => {
     const main = document.getElementById("main");
-    
+    const blob = document.getElementById("blob")
 
     window.addEventListener("mousemove", (event) => {
-      blob.style.top = `${event.pageY}px`;
-      blob.style.left = `${event.pageX}px`;
+      blob?.animate({
+        top :`${event.pageY - 150}px`,
+        left : `${event.pageX - 150}px`,
+      },{duration:700, fill:"forwards"})
 
 
     });
@@ -74,11 +78,11 @@
   <section class="projects -z-10 bg-black flex flex-col items-center">
     <div
       id="blob"
-      class="absolute z-10 left-0 blur-[200px] size-80 rounded-full from-cyan-400 bg-gradient-to-r to-emerald-600"
+      class="absolute z-10 left-0 blur-[100px] size-80 rounded-full from-cyan-400 bg-gradient-to-r to-emerald-600"
     >
-      <div class="blob"></div>
+      
     </div>
-    <div class="flex h-[80vh] w-screen">
+    <div class="projectArea flex h-[80vh] w-screen">
       <div class="mobile-container">
         <div class="mobile-border z-10 mob1">
           <div class="mobile1 mobile">
@@ -119,18 +123,80 @@
       {/each}
     </div>
   </section>
+  <section class="languagesKnown">
+     <div class="statusInfo">
+      <div class="colors">
+        <div class="color" style="background-image:linear-gradient(90deg,aqua,#03fca5);"></div>
+        <span class="status" >Learnt</span>
+      </div>
+      <div class="colors">
+        <div class="color"style="background-image: linear-gradient(90deg,orange,yellow)"></div>
+        <span class="status">Learning</span>
+      </div>
+      <div class="colors">
+        <div class="color" style="background-image: linear-gradient(90deg,red,#fc623f)"></div>
+        <span class="status">On the roadmap</span>
+      </div>
+     </div>
+     <div class="lang mt-10 grid">
+     <SkillsCard name="Svelte" status=2 logoUrl="/svelte.svg"></SkillsCard>
+     <SkillsCard name="TypeScript" status=2 logoUrl="/ts.svg"></SkillsCard>
+     <SkillsCard name="Javascript" status=2 logoUrl="/js.png"></SkillsCard>
+     <SkillsCard name="Golang" status=2 logoUrl="/go.png"></SkillsCard>
+     <SkillsCard name="Python" status=2 logoUrl="/python.png"></SkillsCard>
+     <SkillsCard name="Java" status=2 logoUrl="/java.svg"></SkillsCard>
+     <SkillsCard name="C" status=1 logoUrl="/c.png"></SkillsCard>
+     <SkillsCard name="Rust" status=0 logoUrl="/rust.png"></SkillsCard>
+
+
+
+
+     </div>
+  </section>
 </div>
 
 <style lang="scss">
   @mixin gradient {
     background-image: linear-gradient(45deg, lime, aqua);
   }
+  @media only screen and (max-width:549px){
+    .projectArea{
+      flex-direction:column;
+      align-items: center;
+      justify-content: center;
+      padding-top:50px;
+    }
+    .abt{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .name{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  @keyframes blob{
+    0%{
+      transform: rotate(0deg);
+    }
+    50%{
+      transform: scaleX(1.3);
+    }
+    100%{
+      transform: rotate(360deg);
+      
+    }
+  }
   .my-name {
     font-size: clamp(0px, 4vw, 20px);
   }
   main {
     --height: calc(100vh - 101px);
-    background-image: url("./bg.jpg");
+    background-image: url("/bg.jpg");
     height: var(--height);
     width: 100vw;
     background-size: cover;
@@ -163,6 +229,11 @@
     height: var(--height);
     width: 100vw;
     align-items: center;
+  }
+
+  #blob{
+    animation: blob 20s infinite;
+    
   }
   .mobile-border {
     max-height: 70vh;
@@ -199,6 +270,8 @@
   .projects {
     height: 100vh;
     width: 100vw;
+    display: flex;
+    
   }
   .notch-border {
     height: 5%;
@@ -240,5 +313,28 @@
     img {
       width: 100%;
     }
+  }
+  .languagesKnown{
+    background-color: black;
+    .statusInfo{
+      display:flex;
+      gap:6px;
+      width: 100vw;
+      justify-content: center;
+      .colors{
+        display: flex;
+        align-items: center;
+        gap:2px;
+        .color{
+          height: 10px;
+          width: 10px;
+        }
+      }
+    }
+  }
+  .lang{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 10px;
   }
 </style>
