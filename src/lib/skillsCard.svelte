@@ -1,10 +1,10 @@
 <script lang="ts">
     import {onMount} from "svelte"
     export let name: string
-    export let status: number
+    export let status: string | number
     export let logoUrl
     let background = status==2? "linear-gradient(90deg,aqua,lime)": status==1 ? "linear-gradient(90deg,orange,yellow,yellow)": "linear-gradient(90deg,red,orange)"
-    let card
+    let card: HTMLElement
     onMount(() => {
         card.style
         console.log(background)
@@ -19,7 +19,7 @@
     </div>
 </div>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap');
 
     .border{
         padding:2px;

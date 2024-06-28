@@ -1,27 +1,15 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card";
-  import { onMount } from "svelte";
+  // import { onMount } from "svelte";
   import type { PageData } from "./$types";
-  import { doc } from "firebase/firestore";
+  // import { doc } from "firebase/firestore";
   import SkillsCard from "$lib/skillsCard.svelte";
   export let data: PageData;
   console.log(data.projectSnap);
   let current: number = 0;
   let projectSnap = data.projectSnap;
 
-  onMount(() => {
-    const main = document.getElementById("main");
-    const blob = document.getElementById("blob")
 
-    window.addEventListener("mousemove", (event) => {
-      blob?.animate({
-        top :`${event.pageY - 150}px`,
-        left : `${event.pageX - 150}px`,
-      },{duration:700, fill:"forwards"})
-
-
-    });
-  });
 </script>
 
 <main class="relative z-20">
@@ -72,16 +60,12 @@
         </div>
       </Card.Footer>
     </Card.Root>
+    
   </section>
 </main>
 <div id="main">
   <section class="projects -z-10 bg-black flex flex-col items-center">
-    <div
-      id="blob"
-      class="absolute z-10 left-0 blur-[100px] size-80 rounded-full from-cyan-400 bg-gradient-to-r to-emerald-600"
-    >
-      
-    </div>
+
     <div class="projectArea flex h-[80vh] w-screen">
       <div class="mobile-container">
         <div class="mobile-border z-10 mob1">
@@ -179,18 +163,7 @@
       justify-content: center;
     }
   }
-  @keyframes blob{
-    0%{
-      transform: rotate(0deg);
-    }
-    50%{
-      transform: scaleX(1.3);
-    }
-    100%{
-      transform: rotate(360deg);
-      
-    }
-  }
+
   .my-name {
     font-size: clamp(0px, 4vw, 20px);
   }
@@ -201,6 +174,7 @@
     width: 100vw;
     background-size: cover;
   }
+  
   .mobile {
     height: calc(100% - 2px);
     width: calc(100% - 2px);
@@ -231,10 +205,7 @@
     align-items: center;
   }
 
-  #blob{
-    animation: blob 20s infinite;
-    
-  }
+
   .mobile-border {
     max-height: 70vh;
     max-width: calc(calc(70vh / 16) * 9);

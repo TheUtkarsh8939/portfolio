@@ -1,8 +1,8 @@
 <header class="rainbow">
     <nav class="header">
-        <img src="./logo.jpg" alt="" class="logo">
+        <a href="/"><img src="./logo.jpg" alt="" class="logo"></a>
         <ul class="links">
-            <li class="link">About </li>
+            <li class="link"><a href="/about">About </a></li>
             <li class="link">Contact</li>
             <li class="link">Blogs</li>
             <li class="link">Newsletter</li>
