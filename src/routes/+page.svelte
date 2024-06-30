@@ -4,6 +4,7 @@
   import type { PageData } from "./$types";
   // import { doc } from "firebase/firestore";
   import SkillsCard from "$lib/skillsCard.svelte";
+  import { Root } from "postcss";
   export let data: PageData;
   console.log(data.projectSnap);
   let current: number = 0;
@@ -131,9 +132,21 @@
      <SkillsCard name="Java" status=2 logoUrl="/java.svg"></SkillsCard>
      <SkillsCard name="C" status=1 logoUrl="/c.png"></SkillsCard>
      <SkillsCard name="Rust" status=0 logoUrl="/rust.png"></SkillsCard>
+      <div class="flex w-screen  justify-center">
+        <div class="border-git p-[2px]">
+          <Card.Root>
+            <Card.Header class="w-[clamp(0px,70vw,500px)] flex text-center">
+              <h1 class="text-2xl">Get in touch</h1>
+            </Card.Header>
+            <Card.Content class="w-[clamp(0px,70vw,500px)] flex justify-center">
+              <div class="border-git-link">
+                <a href="/contact" class="getintouch">Contact me</a>
 
-
-
+              </div>              
+            </Card.Content>
+           </Card.Root>
+        </div>
+    </div>
 
      </div>
   </section>
@@ -163,9 +176,28 @@
       justify-content: center;
     }
   }
+  @keyframes gitborder{
+    0%{
+    background: linear-gradient(45deg,aqua,lime);
 
+    }
+    50%{
+    background: linear-gradient(105deg,aqua,lime);
+
+    }
+    100%{
+    background: linear-gradient(150deg,aqua,lime);
+
+    }
+  }
   .my-name {
     font-size: clamp(0px, 4vw, 20px);
+  }
+  .border-git{
+    animation: gitborder 10s infinite;
+    border-radius: 15px;
+    margin-top: 10px;
+    
   }
   main {
     --height: calc(100vh - 101px);
@@ -174,7 +206,16 @@
     width: 100vw;
     background-size: cover;
   }
-  
+  .getintouch{
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 20px;
+    
+  }
   .mobile {
     height: calc(100% - 2px);
     width: calc(100% - 2px);
@@ -182,6 +223,11 @@
     border-radius: 20px;
     display: flex;
     justify-content: center;
+  }
+  .border-git-link{
+    padding: 1px;
+    animation: gitborder 10s infinite;
+    border-radius: 20px;
   }
   .ovr {
     display: flex;

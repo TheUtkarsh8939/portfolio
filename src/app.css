@@ -79,3 +79,6 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.h-200-custom{
+  height: 200px; 
+}
