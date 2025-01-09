@@ -111,7 +111,7 @@
   <section class="languagesKnown">
      <div class="statusInfo">
       <div class="colors">
-        <div class="color" style="background-image:linear-gradient(90deg,aqua,#03fca5);"></div>
+        <div class="color" style="background-image:linear-gradient(130deg,blue,#ff00c8);"></div>
         <span class="status" >Learnt</span>
       </div>
       <div class="colors">
@@ -133,16 +133,19 @@
      <SkillsCard name="C" status=1 logoUrl="/c.png"></SkillsCard>
      <SkillsCard name="Rust" status=0 logoUrl="/rust.png"></SkillsCard>
       <div class="flex w-screen  justify-center">
-        <div class="border-git p-[2px]">
-          <Card.Root>
+        <div class="border-git p-[1px]">
+          <Card.Root class="rounded-2xl">
             <Card.Header class="w-[clamp(0px,70vw,500px)] flex text-center">
               <h1 class="text-2xl">Get in touch</h1>
             </Card.Header>
             <Card.Content class="w-[clamp(0px,70vw,500px)] flex justify-center">
-              <div class="border-git-link">
-                <a href="/contact" class="getintouch">Contact me</a>
-
-              </div>              
+              <div class="flex flex-col items-center justify-start">
+                <div class="border-git-link relative z-10">
+                  <a href="/contact" class="getintouch">Contact me</a>
+  
+                </div>              
+                <div class="shadow absolute h-14 mt-2 w-20"></div>
+              </div>
             </Card.Content>
            </Card.Root>
         </div>
@@ -154,7 +157,11 @@
 
 <style lang="scss">
   @mixin gradient {
-    background-image: linear-gradient(45deg, lime, aqua);
+    background-image: linear-gradient(90deg, blue, magenta);
+  }
+  .shadow{
+    @include gradient();
+    filter:blur(20px);
   }
   @media only screen and (max-width:549px){
     .projectArea{
@@ -176,25 +183,11 @@
       justify-content: center;
     }
   }
-  @keyframes gitborder{
-    0%{
-    background: linear-gradient(45deg,aqua,lime);
-
-    }
-    50%{
-    background: linear-gradient(105deg,aqua,lime);
-
-    }
-    100%{
-    background: linear-gradient(150deg,aqua,lime);
-
-    }
-  }
   .my-name {
     font-size: clamp(0px, 4vw, 20px);
   }
   .border-git{
-    animation: gitborder 10s infinite;
+    background:linear-gradient(45deg,blue,rgb(195, 0, 255));
     border-radius: 15px;
     margin-top: 10px;
     
@@ -226,7 +219,7 @@
   }
   .border-git-link{
     padding: 1px;
-    animation: gitborder 10s infinite;
+    background:linear-gradient(135deg,blue,rgb(195, 0, 255));
     border-radius: 20px;
   }
   .ovr {
@@ -266,8 +259,8 @@
     //@include gradient();
     background-color: black;
     box-shadow:
-      0px 0px 25px aqua,
-      0px 0px 16px lime;
+      0px 0px 25px rgb(0, 0, 255),
+      0px 0px 16px rgb(255, 0, 200);
   }
   .mobile-container {
     &:hover {

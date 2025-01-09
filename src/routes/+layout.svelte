@@ -21,7 +21,7 @@
 <slot/>
 <div
 id="blob"
-class="absolute z-10 left-0 blur-[100px] size-80 rounded-full from-cyan-400 bg-gradient-to-r to-emerald-600"
+        class="absolute z-1 left-0 blur-[150px] size-80 rounded-full"
 >
 
 </div>
@@ -42,5 +42,6 @@ class="absolute z-10 left-0 blur-[100px] size-80 rounded-full from-cyan-400 bg-g
   #blob{
     animation: blob 20s infinite;
     pointer-events: none;
+    background:linear-gradient(45deg,rgba(0, 0, 255, 0.35),rgba(255, 0, 255, 0.35));
   }
 </style>

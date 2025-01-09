@@ -1,56 +1,340 @@
 <div class="about">
-    <h2>The 12-Year-Old Programmer</h2>
-<p>Hi there! I&#39;m a 12-year-old programmer, and I&#39;d like to share a bit about my journey and passions with you.</p>
-<h3 id="my-journey-into-programming">My Journey into Programming</h3>
-<p>It all started in mid-2020 when I was eight years old. The world was changing rapidly, and like many others, I found myself with a lot of free time. Being naturally curious, I stumbled upon the question, &quot;How do you make a search engine like Google?&quot; This simple question led me to a tutorial that introduced me to PHP, and that&#39;s where my programming adventure began.</p>
-<p>I followed the tutorial and successfully created a basic search engine. That experience sparked a fire in me. I didn&#39;t stop at PHP. I dived deeper into the world of programming, learning new languages and tools along the way. Today, I am a full stack developer, proficient in TypeScript, Svelte, Golang, Python, and PHP. I also work with databases like MongoDB and SQL (MariaDB).</p>
-<h3 id="projects-i-m-proud-of">Projects I&#39;m Proud Of</h3>
-<p>I&#39;ve worked on several projects, but two stand out the most:</p>
-<ol>
-<li><p><strong>Sparshak</strong>: This is a real-time chat app with a plethora of features. I envisioned it as a universal friends app, and that&#39;s my ultimate goal for it. Sparshak is already in use by 7,000 monthly active users (MAU), consisting of friends, their friends, and their extended networks.</p>
-</li>
-<li><p><strong>Algorithm Visualizer</strong>: I created this from scratch using only HTML, CSS, and JavaScript. It helps users understand how different algorithms work through visual representation. This project was a significant milestone for me as it combined my love for design and coding.</p>
-</li>
-</ol>
-<h3 id="learning-and-inspiration">Learning and Inspiration</h3>
-<p>My primary source of learning has been YouTube. I didn&#39;t have a mentor or formal teacher; instead, I relied on online tutorials and videos. Fortunately, I consider myself a gifted learner, and I didn&#39;t face many challenges picking up new concepts and skills. </p>
-<p>I was initially inspired by the Google Search Engine. The idea that something so powerful could be built with code fascinated me and drove me to learn more. My future goal is to make Sparshak the universal friends app, connecting people in ways they&#39;ve never experienced before.</p>
-<h3 id="hobbies-and-interests">Hobbies and Interests</h3>
-<p>Apart from programming, I have a few other hobbies that I am passionate about:</p>
-<ul>
-<li><strong>Singing</strong>: I love singing and I&#39;m pretty good at it. It’s a great way for me to relax and express myself creatively.</li>
-<li><strong>Writing</strong>: I enjoy writing, especially during extempores. It helps me organize my thoughts and communicate effectively.</li>
-<li><strong>Cubing</strong>: I&#39;m also a speedcuber, and I can solve a Rubik&#39;s Cube in under 20 seconds. It&#39;s a fun and challenging hobby that keeps my mind sharp.</li>
-</ul>
-<h3 id="community-and-achievements">Community and Achievements</h3>
-<p>I&#39;ve always believed in the power of community, so I founded my own programming club called ASUPG (ASU Programming Group). It&#39;s a place where like-minded individuals can come together to share knowledge, work on projects, and inspire each other.</p>
-<p>While I haven&#39;t participated in any coding competitions or hackathons yet, my projects have reached a wide audience. The fact that 7,000 MAU are using Sparshak is a testament to the impact of my work. Additionally, I am preparing for the Zonal Computing Olympiad, which is an exciting opportunity for me to test and expand my skills.</p>
-<h3 id="personal-traits">Personal Traits</h3>
-<p>If I were to describe myself in a few words, I&#39;d say I&#39;m simple, chill, and a passionate learner. I love learning by doing and enjoy the creative aspects of both UI design and code design. Programming, to me, is an art form, and I take great pride in creating elegant and efficient solutions.</p>
-<h3 id="looking-ahead">Looking Ahead</h3>
-<p>The journey so far has been incredible, but I know it&#39;s just the beginning. I&#39;m excited about the future and the endless possibilities that lie ahead. Whether it&#39;s developing new features for Sparshak, creating more educational tools like the Algorithm Visualizer, or exploring new technologies, I&#39;m ready for the adventure.</p>
-<p>Thank you for taking the time to learn about me. Let&#39;s continue to explore, create, and innovate together!</p>
+  <div class="w-screen flex flex-col-reverse items-center">
+    <div class="p-[2px] rounded-3xl flex justify-center w-4/5 fancy">
+      <div
+        class="start bg-black rounded-3xl flex sm:flex-col p-8 items-center gap-9 z-50 w-full"
+      >
+        <img src="./me-abt.jpeg" alt="" class="me w-24 h-24 rounded-full" />
+        <div class="abt">
+          <h2>Utkarsh Chandel</h2>
+          <p>
+            ^_^ <br /> Hi, I am Utkarsh. I am still learning how the world works,
+            but during these times, I have shown the world that I know of that age
+            is just a number, real thing is your ambition.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="shadow-lights blur-xl absolute h-10 w-4/5 -z-10"></div>
+  </div>
+  <div class="journey w-screen">
+    <div class="timeline">
+      <div class="containr left-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>The First Spark</h2>
+          <small>July 2020</small>
+          <p>
+            COVID-19 was there, the lockdowns were on place. I found myself
+            alone in the house with a phone sideby, I decided to search the
+            question "How to make Google." Which would lead me to youtube where
+            for the next 15 days I followed the tutorials and made my first
+            project, a search engine
+          </p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
 
+      <div class="containr right-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>The PHP Phase</h2>
+          <small>August 2020 - January 2021</small>
+          <p>
+            During these times, I made many small sideprojects using PHP like
+            E-Commerce Websites, Food odering websites, Admin panels, etc.
+          </p>
+          <span class="right-container-arrow"></span>
+        </div>
+      </div>
+      <div class="containr left-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>Discovering Python</h2>
+          <small>2021</small>
+          <p>
+            I discovered Python these months, which allowed me to make many
+            small scripts to automate many of my tasks, And it is still the
+            language of my choice for scripting these days
+          </p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+
+      <div class="containr right-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>The Long Break</h2>
+          <small>H1 2022</small>
+          <p>
+            I finally decided to take a break from programming, which lasted
+            around 5 months. But when I got to program again I realized
+            something
+          </p>
+          <span class="right-container-arrow"></span>
+        </div>
+      </div>
+      <div class="containr left-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>Restarting Again</h2>
+          <small>H2 2022 - Early 2023</small>
+          <p>
+            All these years I relearnt all the technologies with significantly
+            more detail, Which made my code much more cleaner and modular.
+          </p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+
+      <div class="containr right-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>Javascript</h2>
+          <small>Feburary 2023 - Present</small>
+          <p>
+            At this time I started making applications using only Javascript on
+            both frontend and backend.
+          </p>
+          <span class="right-container-arrow"></span>
+        </div>
+      </div>
+
+      <div class="containr left-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>Svelte</h2>
+          <small>May 2023 - Present</small>
+          <p>
+            This is when I discoverd Svelte and started building applications on it Since then it is my go to framework for Front end building and has powered my biggest apps, Even this portfolio is built with Svelte
+          </p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+
+      <div class="containr right-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>Minecraft Mods and Java</h2>
+          <small>November 2023 - July 2024</small>
+          <p>
+            At this point I started to make mods for me and my friends to play with, This also gave me opportunity to learn Java.
+          </p>
+          <span class="right-container-arrow"></span>
+        </div>
+      </div>
+      <div class="containr left-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>Golang</h2>
+          <small>January 2024 - Present</small>
+          <p>
+            Now I wanted to make something high-performing, so I decided to use golangs. This is also the time where I started to make chess engines as chess was one of my biggest hobbies
+          </p>
+          <span class="left-container-arrow"></span>
+        </div>
+      </div>
+
+      <div class="containr right-container">
+        <img src="download.png" />
+        <div class="text-box">
+          <h2>Deep Dive into CPU design and computer science</h2>
+          <small>July 2024 - Present</small>
+          <p>
+            Till this point I realized everything I have been doing is just the surface and that is when I discovered Mattbatwings. From there using the medium of Minecraft Redstone I learned computer science, which has helped me a ton even outside of programming.
+          </p>
+          <span class="right-container-arrow"></span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<style lang="scss">
-    
-    .about{
-        width: 100vw;
-        height: auto;
-        padding:20px;
-        h2{
-            font-size:26px;
-            font-family: "Playwrite ES Deco", cursive;
-            margin-bottom: 10px;
-        }
-        h3{
-            font-size:23px;
-            font-family: "Playwrite ES Deco";
-            margin-bottom: 10px;
 
-        }
-        strong{
-            font-family:'Courier New', Courier, monospace;
-        }
+<style lang="scss">
+  .fancy {
+    background: conic-gradient(
+      from -45deg,
+      rgba(0, 0, 0, 0) 0deg,
+      rgba(0, 0, 0, 0) 150deg,
+      rgba(0, 0, 255, 1) 180deg,
+      #ae00ff 270deg,
+      rgba(0, 0, 0, 0) 300deg
+    );
+  }
+  .shadow-lights {
+    background: linear-gradient(270deg, blue, #ae00ff);
+  }
+  .text-box{
+    small,p,h2{
+      position: relative;
+      z-index: 15;
     }
+  }
+  .about {
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    h2 {
+      font-size: 26px;
+      font-family: "Playwrite ES Deco", cursive;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 23px;
+      font-family: "Playwrite ES Deco";
+      margin-bottom: 10px;
+    }
+    strong {
+      font-family: "Courier New", Courier, monospace;
+    }
+  }
+  .line {
+    background-color: white;
+    height: 100%;
+    width: 3px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 100%;
+    margin: 100px auto;
+  }
+  .containr {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+  }
+  @keyframes movedown {
+    0% {
+      opacity: 1;
+      transform: translate(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px);
+    }
+  }
+  .text-box {
+    padding: 20px 30px;
+    background: inherit;
+    z-index: 15;
+    position: relative;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+  .left-container {
+    left: 0;
+  }
+  .right-container {
+    left: 50%;
+  }
+  .containr img {
+    position: absolute;
+    width: 20px;
+    border-radius: 50%;
+    right: -10px;
+    top: 35px;
+    z-index: 10;
+  }
+  .right-container img {
+    left: -10px;
+  }
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #fff;
+    top: 0px;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+  }
+  @keyframes moveline {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  .text-box h2 {
+    font-weight: 600;
+  }
+  .text-box small {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px soild transparent;
+    border-bottom: 15px soild transparent;
+    border-left: 15px soild #fff;
+    right: -15px;
+  }
+  .containr:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .containr:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .containr:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .containr:nth-child(4) {
+    animation-delay: 2s;
+  }
+  .containr:nth-child(4) {
+    animation-delay: 3s;
+  }
+  .containr:nth-child(5) {
+    animation-delay: 4s;
+  }
+  .containr:nth-child(6) {
+    animation-delay: 5s;
+  }
+  .containr:nth-child(7) {
+    animation-delay: 6s;
+  }
+  .containr:nth-child(8) {
+    animation-delay: 7s;
+  }
+  @media screen and (max-width: 900px) {
+    .timeline {
+      margin: 50px auto;
+    }
+    .timeline::after {
+      left: 31px;
+    }
+    .containr {
+      width: 100%;
+      padding-left: 80px;
+      padding-right: 25px;
+    }
+    .text-box {
+      font-size: 13px;
+    }
+    .text-box small {
+      font-size: 10px;
+    }
+    .right-container {
+      left: 0;
+    }
+    .left-container img {
+      left: 20px;
+    }
+    .right-container img {
+      left: 20px;
+    }
+  }
 </style>

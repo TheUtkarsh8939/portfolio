@@ -3,7 +3,7 @@
     export let name: string
     export let status: string | number
     export let logoUrl
-    let background = status==2? "linear-gradient(90deg,aqua,lime)": status==1 ? "linear-gradient(90deg,orange,yellow,yellow)": "linear-gradient(90deg,red,orange)"
+    let background = status==2? "linear-gradient(45deg,blue,#cf00ff)": status==1 ? "linear-gradient(90deg,orange,yellow,yellow)": "linear-gradient(90deg,red,orange)"
     let card: HTMLElement
     onMount(() => {
         card.style
@@ -22,7 +22,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap');
 
     .border{
-        padding:2px;
+        padding:1px;
         display: flex;
         align-items: center;
         justify-content: center;
