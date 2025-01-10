@@ -4,7 +4,7 @@ import { conf } from "./../fbase_config.ts";
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs, collection } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
-
+export const prerender = true;
 // Define ProjectData interface
 interface ProjectData {
   name: string;

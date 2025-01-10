@@ -4,63 +4,29 @@
   import type { PageData } from "./$types";
   // import { doc } from "firebase/firestore";
   import SkillsCard from "$lib/skillsCard.svelte";
+  import Journey from "$lib/journey.svelte"
+  import Myself from "$lib/myself.svelte";
   import { Root } from "postcss";
   export let data: PageData;
   console.log(data.projectSnap);
   let current: number = 0;
   let projectSnap = data.projectSnap;
-
+  const prev = () => {
+    if(current>0){
+      current--
+    }
+  }
+  const next = () => {
+    if(current<projectSnap.length){
+      current++
+    }
+  }
 
 </script>
 
-<main class="relative z-20">
-  <section class="ovr z-30">
-    <Card.Root
-      class="bg-[rgba(0,0,0,0.69)] max-h-[500px]  absolute w-[clamp(100px,60%,500px)] mb-10 "
-    >
-      <Card.Header
-        class="gap-2 flex-row flex items-center font-['Poppins'] text-lg justify-evenly"
-      >
-        <img
-          src="./logo.jpg"
-          alt=""
-          class="x w-[30%] aspect-square max-w-16 rounded-full"
-        />
-        <h2 class="font-['Poppins'] my-name flex justify-center items-center">
-          The 12 Year old programmer
-        </h2>
-      </Card.Header>
-      <Card.Content class="overflow-hidden">
-        <p class="me text-balance font-sans max-h-[300px] overflow-hidden">
-          Hey There 👋, I am Utkarsh Chandel. Also known as the 11 year old
-          programmer. I am from India. Born in 18 March 2012, My current age is {data.age}.
-          I have been programming since 2020 and now I've been programming for {data.codingFor}
-          years. Now I know total of 6 programming languages which being: Javascript,
-          Python, PHP, Go, Java and C
-        </p>
-      </Card.Content>
-      <Card.Footer class="flex flex-col items-start gap-2 font-['Poppins']">
-        <h3>Socials:</h3>
-
-        <div class="wrapper flex w-full justify-between">
-          <a href="https://www.youtube.com/@TheUtkarsh8939" target="_blank">
-            <img src="./yt.svg" alt="Youtube Logo" class="size-12" />
-          </a>
-          <a
-            href="https://github.com/TheUtkarsh8939"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="./github.svg"
-              alt="Github Logo"
-              class="size-12"
-              style="filter:invert(100%)"
-            />
-          </a>
-        </div>
-      </Card.Footer>
-    </Card.Root>
+<main class="relative z-[20]">
+  <section class="ovr">
+    <Myself/>
     
   </section>
 </main>
@@ -68,6 +34,7 @@
   <section class="projects -z-10 bg-black flex flex-col items-center">
 
     <div class="projectArea flex h-[80vh] w-screen">
+      <button class="w-10 h-10 bg-slate-900 absolute mt-80" on:click={prev}> &#60;</button>
       <div class="mobile-container">
         <div class="mobile-border z-10 mob1">
           <div class="mobile1 mobile">
@@ -91,12 +58,15 @@
           </div>
         </div>
       </div>
+
       <div class="abt">
         <h3>{projectSnap[current].name}</h3>
         <p>
           {projectSnap[current].about}
         </p>
       </div>
+      <button class="w-10 h-10 bg-slate-900 absolute mt-80 right-0" on:click={next}> ></button>
+
     </div>
     <div class="dot-array flex gap-1">
       {#each projectSnap as _, i}
@@ -132,27 +102,28 @@
      <SkillsCard name="Java" status=2 logoUrl="/java.svg"></SkillsCard>
      <SkillsCard name="C" status=1 logoUrl="/c.png"></SkillsCard>
      <SkillsCard name="Rust" status=0 logoUrl="/rust.png"></SkillsCard>
-      <div class="flex w-screen  justify-center">
-        <div class="border-git p-[1px]">
-          <Card.Root class="rounded-2xl">
-            <Card.Header class="w-[clamp(0px,70vw,500px)] flex text-center">
-              <h1 class="text-2xl">Get in touch</h1>
-            </Card.Header>
-            <Card.Content class="w-[clamp(0px,70vw,500px)] flex justify-center">
-              <div class="flex flex-col items-center justify-start">
-                <div class="border-git-link relative z-10">
-                  <a href="/contact" class="getintouch">Contact me</a>
-  
-                </div>              
-                <div class="shadow absolute h-14 mt-2 w-20"></div>
-              </div>
-            </Card.Content>
-           </Card.Root>
-        </div>
+     
     </div>
-
-     </div>
   </section>
+  <Journey/>
+  <div class="flex w-screen  justify-center">
+    <div class="border-git p-[1px]">
+      <Card.Root class="rounded-2xl">
+        <Card.Header class="w-[clamp(0px,70vw,500px)] flex text-center">
+          <h1 class="text-2xl">Get in touch</h1>
+        </Card.Header>
+        <Card.Content class="w-[clamp(0px,70vw,500px)] flex justify-center">
+          <div class="flex flex-col items-center justify-start">
+            <div class="border-git-link relative z-10">
+              <a href="/contact" class="getintouch">Contact me</a>
+  
+            </div>              
+            <div class="shadow absolute h-14 mt-2 w-20"></div>
+          </div>
+        </Card.Content>
+       </Card.Root>
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
@@ -226,14 +197,8 @@
     display: flex;
     justify-content: center;
     background-image: linear-gradient(
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.25),
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.75),
       rgba(0, 0, 0, 0.75),
       rgba(0, 0, 0, 0.85),
       rgba(0, 0, 0, 0.95),
