@@ -18,7 +18,10 @@
   });
 </script>
 <Nav></Nav>
+<div class="slot">
 <slot/>
+
+</div>
 <div
 id="blob"
         class="absolute z-1 left-0 blur-[150px] size-80 rounded-full"
@@ -43,5 +46,8 @@ id="blob"
     animation: blob 20s infinite;
     pointer-events: none;
     background:linear-gradient(45deg,rgba(0, 0, 255, 0.35),rgba(255, 0, 255, 0.35));
+  }
+  .slot{
+    background-color: black;
   }
 </style>

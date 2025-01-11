@@ -43,6 +43,7 @@
   * {
     box-sizing: border-box;
     cursor: default;
+    text-align: left;
   }
   #sign{
       stroke-dasharray: 638;

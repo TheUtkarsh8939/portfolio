@@ -6,7 +6,7 @@
   import SkillsCard from "$lib/skillsCard.svelte";
   import Journey from "$lib/journey.svelte"
   import Myself from "$lib/myself.svelte";
-  import { Root } from "postcss";
+  let meOpen = "none"
   export let data: PageData;
   console.log(data.projectSnap);
   let current: number = 0;
@@ -23,18 +23,43 @@
   }
 
 </script>
-
+<div class="abt-me-card" style="display:{meOpen};">
+  <div class="bg-[rgb(0,0,0,0.7)] flex items-center justify-center fixed z-50 h-[100vh] top-0 w-screen">
+    <div class="card h-auto w-4/5 bg-[rgb(0,0,0,0.9)] flex-col flex items-center px-4 py-4 border-2 border-gray-800 rounded-3xl">
+      <nav class="w-full h-2 flex justify-end">
+        <button class="cross cursor-pointer" on:click={()=>{meOpen="none"}}>
+          <div class="plus rotate-45">
+            <div class="bg-white h-[15px] w-[2px] absolute"></div>
+            <div class="bg-white h-[15px] w-[2px] rotate-90 absolute"></div>
+          </div>
+        </button>
+      </nav>
+      <p class="text-[clamp(12px,2vw,24px)]">
+        ^_^ <br /> Hi, I am Utkarsh a.k.a The 12 year old programmer. I am
+        still learning how the world works, but during these times, I have
+        shown the world that I know of that age is just a number, real thing
+        is your ambition.
+        <br />
+        <br />
+        I started learning to code during the pandemics when I was 9. Since then
+        not only I have done programming, but also taken CPU and Hardware design
+        as well as UI/UX design too.
+      </p></div>
+  </div>
+</div>
 <main class="relative z-[20]">
   <section class="ovr">
+  <button on:click={()=>{meOpen="block"}}>
     <Myself/>
-    
+
+  </button>    
   </section>
 </main>
 <div id="main">
   <section class="projects -z-10 bg-black flex flex-col items-center">
 
-    <div class="projectArea flex h-[80vh] w-screen">
-      <button class="w-10 h-10 bg-slate-900 absolute mt-80" on:click={prev}> &#60;</button>
+    <div class="projectArea flex md:h-[80vh] h-[100vh] w-screen">
+      <button class="w-10 h-10 bg-slate-900 left-0 absolute mt-80" on:click={prev}> &#60;</button>
       <div class="mobile-container">
         <div class="mobile-border z-10 mob1">
           <div class="mobile1 mobile">
@@ -78,7 +103,7 @@
       {/each}
     </div>
   </section>
-  <section class="languagesKnown">
+  <section class="languagesKnown pt-10">
      <div class="statusInfo">
       <div class="colors">
         <div class="color" style="background-image:linear-gradient(130deg,blue,#ff00c8);"></div>
@@ -93,17 +118,19 @@
         <span class="status">On the roadmap</span>
       </div>
      </div>
-     <div class="lang mt-10 grid">
-     <SkillsCard name="Svelte" status=2 logoUrl="/svelte.svg"></SkillsCard>
-     <SkillsCard name="TypeScript" status=2 logoUrl="/ts.svg"></SkillsCard>
-     <SkillsCard name="Javascript" status=2 logoUrl="/js.png"></SkillsCard>
-     <SkillsCard name="Golang" status=2 logoUrl="/go.png"></SkillsCard>
-     <SkillsCard name="Python" status=2 logoUrl="/python.png"></SkillsCard>
-     <SkillsCard name="Java" status=2 logoUrl="/java.svg"></SkillsCard>
-     <SkillsCard name="C" status=1 logoUrl="/c.png"></SkillsCard>
-     <SkillsCard name="Rust" status=0 logoUrl="/rust.png"></SkillsCard>
-     
-    </div>
+     <div class="w-screen flex items-center justify-center flex-col">
+      <div class="lang mt-10 grid">
+        <SkillsCard name="Svelte" status=2 logoUrl="/svelte.svg"></SkillsCard>
+        <SkillsCard name="TypeScript" status=2 logoUrl="/ts.svg"></SkillsCard>
+        <SkillsCard name="Javascript" status=2 logoUrl="/js.png"></SkillsCard>
+        <SkillsCard name="Golang" status=2 logoUrl="/go.png"></SkillsCard>
+        <SkillsCard name="Python" status=2 logoUrl="/python.png"></SkillsCard>
+        <SkillsCard name="Java" status=2 logoUrl="/java.svg"></SkillsCard>
+        <SkillsCard name="C" status=1 logoUrl="/c.png"></SkillsCard>
+        <SkillsCard name="Rust" status=0 logoUrl="/rust.png"></SkillsCard>
+        
+       </div>
+     </div>
   </section>
   <Journey/>
   <div class="flex w-screen  justify-center">
@@ -147,16 +174,9 @@
       align-items: center;
       justify-content: center;
     }
-    .name{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
+
   }
-  .my-name {
-    font-size: clamp(0px, 4vw, 20px);
-  }
+
   .border-git{
     background:linear-gradient(45deg,blue,rgb(195, 0, 255));
     border-radius: 15px;
@@ -263,11 +283,9 @@
     background-color: black;
     border-radius: 0px 0px 5px 5px;
   }
-  .me {
-    font-size: clamp(0px, 3vw, 15px);
-  }
+
   .abt {
-    width: 50vw;
+    width: calc(50vw - 40px);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -310,6 +328,9 @@
   .lang{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 10px;
+    gap: 10px; 
+    align-items: center;
+    width: 100vw;
+    justify-items: center;
   }
 </style>
