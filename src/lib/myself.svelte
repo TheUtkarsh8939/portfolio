@@ -23,9 +23,9 @@
           <div class="w-full flex items-center justify-center"></div>
           <p>
             ^_^ <br /> Hi, I am Utkarsh a.k.a The 12 year old programmer. I am
-            still learning how the world works, but during these times, I have
-            shown the world that I know of that age is just a number, real thing
-            is your ambition.
+            still learning how the world works, People told me I won't be able
+            to do things. And I am just here teaching class 10th Computer
+            Science at the age of 12
             <br />
             <br />
             I started learning to code during the pandemics when I was 9. Since then
@@ -33,6 +33,17 @@
             as well as UI/UX design too.
           </p>
         </div>
+      </div>
+      <div class="socials flex justify-between px-5
+      pb-5">
+      <a href="https://www.youtube.com/@TheUtkarsh8939">
+        <img src="yt.svg" alt="" class="h-10" />
+      </a>
+        <a href="https://github.com/TheUtkarsh8939" 
+        target="_blank"
+        class="bg-white cursor-pointer rounded-full p-0 outline-none">
+          <img src="github.svg" alt="" class="h-12" />
+        </a>
       </div>
     </div>
   </div>
@@ -45,16 +56,14 @@
     cursor: default;
     text-align: left;
   }
-  #sign{
-      stroke-dasharray: 638;
-      stroke-dashoffset: 638;
-      // animation: sign 2s ease forwards;
-      
+  #sign {
+    stroke-dasharray: 638;
+    stroke-dashoffset: 638;
+    // animation: sign 2s ease forwards;
   }
-  @keyframes sign{
-    to{
-    stroke-dashoffset: 0;
-
+  @keyframes sign {
+    to {
+      stroke-dashoffset: 0;
     }
   }
   .fancy {
@@ -73,5 +82,4 @@
   .shadow-lights {
     background: linear-gradient(270deg, blue, #ae00ff);
   }
-
 </style>

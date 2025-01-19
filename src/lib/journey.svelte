@@ -155,6 +155,7 @@
     max-width: 100vw;
     margin: 0px auto;
     border-top: 6px solid white;
+    border-bottom: 6px solid white;
     margin-top: 100px;
   }
   .left-container {
@@ -209,6 +210,9 @@
     font-size:25px;
     font-family:"Playwrite ES Deco", cursive;
   }
+  .containr{
+    z-index: 10;
+  }
   .containr img {
     position: absolute;
     width: 20px;
@@ -229,7 +233,7 @@
     top: 0px;
     left: 50%;
     margin-left: -3px;
-    z-index: -1;
+    z-index: 0;
     animation: moveline 6s linear forwards;
   }
   @keyframes moveline {
