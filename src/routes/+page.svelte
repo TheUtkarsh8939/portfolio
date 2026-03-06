@@ -43,6 +43,7 @@
         I started learning to code during the pandemics when I was 9. Since then
         not only I have done programming, but also taken CPU and Hardware design, AI Agents and Simulation
         as well as UI/UX design too.
+        Apart from this I write quite a lot of poems too, I would upload them here once I update this site again
       </p></div>
   </div>
 </div>
