@@ -110,7 +110,7 @@
       <img src="download.png" alt="Dot" />
       <div class="text-box">
         <h2>Golang</h2>
-        <small>January 2024 - Present</small>
+        <small>January 2024 - August 2024</small>
         <p>
           Now I wanted to make something high-performing, so I decided to use
           golangs. This is also the time where I started to make chess engines
@@ -134,6 +134,43 @@
         <span class="right-container-arrow"></span>
       </div>
     </div>
+    <div class="containr left-container">
+      <img src="download.png" alt="Dot" />
+      <div class="text-box">
+        <h2>Helping my friends</h2>
+        <small>April 2025 - September -2025</small>
+        <p>
+          I was getting bored during all this and wanted to make something fun, so I decided to make many projects for my class friends, like tools and chatbots to help the with materials and generate notes and all
+          During this time I also made class8bsaltlake.vercel.app, it is a website for our class (it needs some updating tho). Well I didn't have enough money to get a domain for it(nor this site too) so yeah.
+        </p>
+        <span class="left-container-arrow"></span>
+      </div>
+    </div>
+    <div class="containr right-container">
+      <img src="download.png" alt="Dot" />
+      <div class="text-box">
+        <h2>Developing Apps</h2>
+        <small>September 2025- November 2025</small>
+        <p>
+          I discovered wolvesville around that time so I started to make apps like that, and I studied design philosophy of the app "NGL" and I wanted to make something like this, but it is still under development
+        </p>
+        <span class="right-container-arrow"></span>
+      </div>
+    </div>
+
+    <div class="containr left-container">
+      <img src="download.png" alt="Dot" />
+      <div class="text-box">
+        <h2>AI Agents</h2>
+        <small>December 2025 - Present</small>
+        <p>
+          Philosophy started clashing with my minds now and I started to design many models and agents here, especially simulation agents, my current project as of March 2026 is an ai agent simulation software.
+          I am working on studying AGI and its possiblites via Recursive prompting, I would make sure to upload my plans here too later this month.
+        </p>
+        <span class="left-container-arrow"></span>
+      </div>
+    </div>
+
   </div>
 </div>
 
