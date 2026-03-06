@@ -35,13 +35,13 @@
         </button>
       </nav>
       <p class="text-[clamp(12px,2vw,24px)]">
-        ^_^ <br /> Hi, I am Utkarsh a.k.a The 12 year old programmer. I am
+        ^_^ <br /> Hi, I am Utkarsh a.k.a The 13 year old programmer. I am
         still learning how the world works, People told me I won't be able to do things.
-        And I am just here teaching class 10th Computer Science at the age of 12
+        And I am just here teaching class 11th Computer Science at the age of 13
         <br />
         <br />
         I started learning to code during the pandemics when I was 9. Since then
-        not only I have done programming, but also taken CPU and Hardware design
+        not only I have done programming, but also taken CPU and Hardware design, AI Agents and Simulation
         as well as UI/UX design too.
       </p></div>
   </div>
