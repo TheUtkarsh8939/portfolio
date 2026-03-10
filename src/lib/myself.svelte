@@ -22,15 +22,15 @@
 
           <div class="w-full flex items-center justify-center"></div>
           <p>
-            ^_^ <br /> Hi, I am Utkarsh a.k.a The 12 year old programmer. I am
-            still learning how the world works, People told me I won't be able
-            to do things. And I am just here teaching class 10th Computer
-            Science at the age of 12
+          ^_^ <br /> Hi, I am Utkarsh a.k.a The 14 year old programmer. I am
+        still learning how the world works, People told me I won't be able to do things.
+        And here I am, and my life shows for itself...
             <br />
             <br />
-            I started learning to code during the pandemics when I was 9. Since then
-            not only I have done programming, but also taken CPU and Hardware design
-            as well as UI/UX design too.
+ I started learning to code during the pandemics when I was 9. Since then
+        not only I have done programming, but also taken CPU and Hardware design, AI Agents and Simulation
+        as well as UI/UX design too.
+        Apart from this I write quite a lot of poems too, I would upload them here once I update this site again
           </p>
         </div>
       </div>
